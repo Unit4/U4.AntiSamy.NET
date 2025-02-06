@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -36,9 +36,11 @@ jobs:
 
       - name: Pack NuGet package
         run: dotnet pack --configuration Release --no-build --output ./nupkg
-          
+
       - name: Publish the package to Azure Artifacts
         env:
-          NUGET_SOURCE_URL: ${{ secrets.NUGET_SOURCE_URL }}
+          AZURE_ORGANIZATION: ${{ secrets.AZURE_ORGANIZATION }}
+          AZURE_PROJECT: ${{ secrets.AZURE_PROJECT }}
+          AZURE_FEED: ${{ secrets.AZURE_FEED }}
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
-        run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_SOURCE_URL --api-key $NUGET_KEY
+        run: dotnet nuget push ./nupkg/*.nupkg --source 'https://pkgs.dev.azure.com/$AZURE_ORGANIZATION/$AZURE_PROJECT/_packaging/$AZURE_FEED/nuget/v3/index.json' --api-key $NUGET_KEY
