@@ -1,8 +1,8 @@
-﻿using FluentAssertions;
-using System.Linq;
+﻿using System.Linq;
+using FluentAssertions;
 using Xunit;
 
-namespace AntiSamy.Tests
+namespace U4.AntiSamy.Tests
 {
     public class LiteralTests : TestBase
     {
@@ -12,7 +12,7 @@ namespace AntiSamy.Tests
         {
             var html = "<div align=\"right\">html</div>";
 
-            AntiySamyResult result = new AntiSamy().Scan(html, TestPolicy);
+            AntiySamyResult result = new U4.AntiSamy.AntiSamy().Scan(html, TestPolicy);
 
             result.ErrorMessages.Count().Should().Be(0);
         }
@@ -22,7 +22,7 @@ namespace AntiSamy.Tests
         {
             var badHtml = "<div align=\"foo\">badhtml</div>";
 
-            AntiySamyResult result = new AntiSamy().Scan(badHtml, TestPolicy);
+            AntiySamyResult result = new U4.AntiSamy.AntiSamy().Scan(badHtml, TestPolicy);
 
             result.ErrorMessages.Count().Should().BeGreaterThan(0);
         }

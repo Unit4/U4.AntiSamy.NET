@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using U4.AntiSamy.Model;
 
-using AntiSamy.Model;
-
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     public class Policy
     {

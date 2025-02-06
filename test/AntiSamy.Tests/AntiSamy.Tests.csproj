@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-
+    <TargetFramework>net8</TargetFramework>
     <IsPackable>false</IsPackable>
+    <AssemblyName>U4.AntiSamy.Tests</AssemblyName>
+    <RootNamespace>U4.AntiSamy.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

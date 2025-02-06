@@ -1,0 +1,52 @@
+name: Build and Publish U4.AntiSamy.NET
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test --configuration Release --no-build --verbosity normal
+
+      - name: Pack NuGet package
+        run: dotnet pack --configuration Release --output ./nupkg
+
+      - name: Authenticate with Azure Artifacts
+        uses: azure/pipelines@v1
+        with:
+          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+
+      - name: Publish NuGet package to Azure Artifacts
+        env:
+          NUGET_SOURCE_URL: ${{ secrets.NUGET_SOURCE_URL }}
+          AZURE_DEVOPS_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+        run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_SOURCE_URL --api-key $AZURE_DEVOPS_TOKEN
+
+      - name: Publish build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            **/bin/Release/

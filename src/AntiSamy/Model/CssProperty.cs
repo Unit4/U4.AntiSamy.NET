@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AntiSamy.Model
+namespace U4.AntiSamy.Model
 {
     public class CssProperty
     {

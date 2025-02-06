@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     public class AntiySamyResult
     {

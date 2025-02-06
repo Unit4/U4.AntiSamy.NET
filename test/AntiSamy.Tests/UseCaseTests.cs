@@ -1,8 +1,7 @@
 ﻿using FluentAssertions;
-
 using Xunit;
 
-namespace AntiSamy.Tests
+namespace U4.AntiSamy.Tests
 {
     public class UseCaseTests : TestBase
     {
@@ -11,7 +10,7 @@ namespace AntiSamy.Tests
         [Fact]
         public void invalid_img_urls_should_be_filtered()
         {
-            var scanner = new AntiSamy();
+            var scanner = new U4.AntiSamy.AntiSamy();
 
             /*
              * remove non-allowed image srcs
@@ -37,7 +36,7 @@ namespace AntiSamy.Tests
         [Fact]
         public void invalid_tags_should_be_removed()
         {
-            var scanner = new AntiSamy();
+            var scanner = new U4.AntiSamy.AntiSamy();
 
             /*
              * remove iframe, object, embed, frame, frameset
@@ -69,7 +68,7 @@ namespace AntiSamy.Tests
         [Fact]
         public void invalid_a_hrefs_should_be_filtered()
         {
-            var scanner = new AntiSamy();
+            var scanner = new U4.AntiSamy.AntiSamy();
 
             /*
              * remove non-allowed hrefs
@@ -104,7 +103,7 @@ namespace AntiSamy.Tests
         [Fact]
         public void script_references_should_be_removed_by_default()
         {
-            var scanner = new AntiSamy();
+            var scanner = new U4.AntiSamy.AntiSamy();
 
             /*
              * remove non-allowed hrefs
@@ -131,7 +130,7 @@ namespace AntiSamy.Tests
         [Fact]
         public void allow_any_src_in_img_tag()
         {
-            var scanner = new AntiSamy();
+            var scanner = new U4.AntiSamy.AntiSamy();
 
             /*
              * remove non-allowed hrefs

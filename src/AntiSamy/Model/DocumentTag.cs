@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AntiSamy.Model
+namespace U4.AntiSamy.Model
 {
     public class DocumentTag
     {
