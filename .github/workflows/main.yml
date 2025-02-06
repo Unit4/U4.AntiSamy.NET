@@ -34,12 +34,12 @@ jobs:
       - name: Pack NuGet package
         run: dotnet pack --configuration Release --output ./nupkg
 
-      - name: Authenticate with Azure Artifacts
-        uses: azure/pipelines@v1
-        with:
-          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
-          azure-devops-project-url: ${{ secrets.AZURE_DEVOPS_PROJECT_URL }}
-          azure-pipeline-name: ${{ secrets.AZURE_PIPELINE_NAME }}
+#      - name: Authenticate with Azure Artifacts
+#        uses: azure/pipelines@v1
+#        with:
+#          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+#          azure-devops-project-url: ${{ secrets.AZURE_DEVOPS_PROJECT_URL }}
+#          azure-pipeline-name: ${{ secrets.AZURE_PIPELINE_NAME }}
 
       - name: Publish NuGet package to Azure Artifacts
         env:
