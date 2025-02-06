@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using AngleSharp;
+using AngleSharp.Css.Dom;
+using AngleSharp.Css.Parser;
+using U4.AntiSamy.Model;
 
-using AngleSharp.Dom.Css;
-using AngleSharp.Extensions;
-using AngleSharp.Parser.Css;
-
-using AntiSamy.Model;
-
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     internal class CssScanner
     {
@@ -32,21 +29,20 @@ namespace AntiSamy
             {
                 ICssStyleSheet styleSheet;
                 try
-                {
+                {   
                     styleSheet = new CssParser(new CssParserOptions
                     {
                         IsIncludingUnknownDeclarations = true,
                         IsIncludingUnknownRules = true,
-                        IsToleratingInvalidConstraints = true,
-                        IsToleratingInvalidValues = true
-                    }).ParseStylesheet(fromStyleAttribute ? dummySelectorBegin + css + dummySelectorEnd : css);
+                        IsToleratingInvalidSelectors = false,
+                    }).ParseStyleSheet(fromStyleAttribute ? dummySelectorBegin + css + dummySelectorEnd : css);
                 }
                 catch (Exception ex)
                 {
                     throw new ParseException(ex.Message, ex);
                 }
 
-                var result = ScanStyleSheet(styleSheet);
+                string result = ScanStyleSheet(styleSheet);
                 cleanStyleSheet = fromStyleAttribute ? CleanDummyWrapper(result) : result;
             }
             catch (ParseException)
@@ -85,7 +81,6 @@ namespace AntiSamy
                 else
                     i++;
             }
-
             return styleSheet.ToCss();
         }
 

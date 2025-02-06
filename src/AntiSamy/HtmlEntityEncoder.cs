@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     internal class HtmlEntityEncoder
     {

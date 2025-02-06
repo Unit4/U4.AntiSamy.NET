@@ -1,4 +1,4 @@
-﻿namespace AntiSamy
+﻿namespace U4.AntiSamy
 {
     public class AntiSamy
     {

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace AntiSamy.Tests
+namespace U4.AntiSamy.Tests
 {
     public abstract class TestBase
     {

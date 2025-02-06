@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using AntiSamy.Model;
-
 using HtmlAgilityPack;
+using U4.AntiSamy.Model;
 
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     public sealed class AntiSamyDomScanner
     {

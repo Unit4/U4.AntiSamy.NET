@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AntiSamy
+namespace U4.AntiSamy
 {
     public class PolicyException : Exception
     {

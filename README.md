@@ -1,6 +1,16 @@
-AntiSamy .NET [![Build status](https://ci.appveyor.com/api/projects/status/fqd8927i932hbr9j?svg=true)](https://ci.appveyor.com/project/CanerPatir/antisamy-net)
+U4.AntiSamy .NET [![Build status](https://ci.appveyor.com/api/projects/status/fqd8927i932hbr9j?svg=true)](https://ci.appveyor.com/project/CanerPatir/antisamy-net)
 ========
 
+Original Project
+----------
+This package is a modified version of [CanerPatir AntiSamy.NET](https://github.com/CanerPatir/AntiSamy.NET).
+
+Modifications
+----------
+- Upgraded AngleSharp library to make it compatible with newer packages.
+
+Description
+----------
 A .net standard library for performing configurable cleansing of HTML coming from untrusted sources.
 
 Another way of saying that could be: It's an API that helps you make sure that clients don't supply malicious cargo code in the HTML they supply for their profile, comments, etc., 

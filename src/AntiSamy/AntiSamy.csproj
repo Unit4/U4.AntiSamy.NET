@@ -1,23 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net48;net481</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Caner Patır</Authors>
-    <Version>1.0.5</Version>
-    <FileVersion>1.0.5.0</FileVersion>
-    <RepositoryUrl>https://github.com/canerpatir/AntiSamy.NET</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/canerpatir/AntiSamy.NET/master/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/canerpatir/AntiSamy.NET</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/canerpatir/AntiSamy.NET/blob/master/LICENCE</PackageLicenseUrl>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <Authors>Unit 4</Authors>
+    <Version>0.0.1</Version>
+    <FileVersion>0.0.1.0</FileVersion>
+    <RepositoryUrl>https://github.com/Unit4/U4.AntiSamy.NET</RepositoryUrl>
+    <PackageIconUrl>https://github.com/Unit4/U4.AntiSamy.NET/master/icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/Unit4/U4.AntiSamy.NET</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Unit4/U4.AntiSamy.NET/blob/master/LICENCE</PackageLicenseUrl>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
     <RepositoryType>git</RepositoryType>
-    <Description>A .net standard library for performing configurable cleansing of HTML coming from untrusted sources.</Description>
-    <Copyright>Caner Patır</Copyright>
+    <Description>
+      A .net standard library for performing configurable cleansing of HTML coming from untrusted sources.
+      
+      Based on the original AntiSamy .NET library by Caner Patır.
+    </Description>
+    <Copyright>Unit 4</Copyright>
+    <AssemblyName>U4.AntiSamy</AssemblyName>
+    <RootNamespace>U4.AntiSamy</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AngleSharp" Version="0.9.9.2" />
+    <PackageReference Include="AngleSharp" Version="1.1.2" />
+    <PackageReference Include="AngleSharp.Css" Version="1.0.0-beta.151" />
     <PackageReference Include="HtmlAgilityPack" Version="1.8.1" />
   </ItemGroup>
 

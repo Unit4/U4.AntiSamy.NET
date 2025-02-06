@@ -1,11 +1,11 @@
-using FluentAssertions;
 using System;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using FluentAssertions;
 using Xunit;
 
-namespace AntiSamy.Tests
+namespace U4.AntiSamy.Tests
 {
     public class AntiSamyTests : TestBase
     {
@@ -29,7 +29,7 @@ namespace AntiSamy.Tests
             "C3c+d5Q9lyTafPLdelG1TKaLFinw1TOjyI6KkrQyHKkttfnO58WFvScl1TiRcB/iHxKahskoE2+VRLUIhctuDU4sUvQh/g9Arw0LAA4QTxuLFt01XYdigurz4FT15ox2oDGGGrRb3VGjDTXK1OWVJoLMW95EVqyMc9F+Fdej85LHE+8WesIfacjUQtTG1tzYVQTfubZq0+qxXws8QrxMLFtVE38tbeXo+Ok1/U5TUa6FjWflEfvKY3XVcl8RKkXua7fVz/Blj8Gh+dWe2cOxa0lpM75ZHyz9adQrB2Pb4571E4u2xI5un0R0MFJZBQuPDc1G5rPhyk+Hb4LRG3dS0m8IASQUOskv93z978L1+Abu9CLP6d6s5p+BzWxhMUqwQXC/CCpTywrkJ0RG",
         };
 
-        private AntiSamy _sut = new AntiSamy();
+        private U4.AntiSamy.AntiSamy _sut = new U4.AntiSamy.AntiSamy();
 
 
         [Fact]
