@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;net48;net481</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Unit 4</Authors>
-    <Version>0.0.1</Version>
+    <Version>0.0.1-test01</Version>
     <FileVersion>0.0.1.0</FileVersion>
     <RepositoryUrl>https://github.com/Unit4/U4.AntiSamy.NET</RepositoryUrl>
     <PackageIconUrl>https://github.com/Unit4/U4.AntiSamy.NET/master/icon.png</PackageIconUrl>
