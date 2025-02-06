@@ -8,7 +8,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
 
 jobs:
   build:
@@ -39,6 +38,8 @@ jobs:
         uses: azure/pipelines@v1
         with:
           azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+          azure-devops-project-url: ${{ secrets.AZURE_DEVOPS_PROJECT_URL }}
+          azure-pipeline-name: ${{ secrets.AZURE_PIPELINE_NAME }}
 
       - name: Publish NuGet package to Azure Artifacts
         env:
@@ -47,7 +48,7 @@ jobs:
         run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_SOURCE_URL --api-key $AZURE_DEVOPS_TOKEN
 
       - name: Publish build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: |
